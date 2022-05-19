@@ -28,19 +28,20 @@
             <input type="text" name="nombre" id="nombre" placeholder="Nombre">
             <label for="lista_anios">Seleccione año de nacimiento: </label>
             <select name="nombre_lista_anios" id="lista_anios">
-
+                <!-- En este lugar agrega opciones de años-->
+                <option value="opc_def">Seleccione año ...</option>
             </select>
         </fieldset>
 
-        <button>Enviar</button>
-        <div id="respuesta">
-            <fieldset>
+        <button onclick="calcularEdad()">Enviar</button>
+        <div >
+            <fieldset id="respuesta">
                 
             </fieldset>
         </div>
 
 
-    <script src="algoritmoej2for.js"></script>
+    <script src="algoritmoRepasoFor.js"></script>
 
 
 

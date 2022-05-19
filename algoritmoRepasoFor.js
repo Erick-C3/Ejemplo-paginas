@@ -23,11 +23,47 @@
                 ej:  "Erick tenes 26 años"
             
         Logica
-            - calcular edad aproximada con el año de nacimiento ingresado
-            - hacer automatica la lista de años ( alguna estructura de iteracion o lo que me sirva)
-            - hacer que el boton muestre la informacion
+            + calcular edad aproximada con el año de nacimiento ingresado
+            + hacer automatica la lista de años ( alguna estructura de iteracion o lo que me sirva)
+            + hacer que el boton muestre la informacion
 */
 
 const ANIO_ACTUAL = 2022;
+const ANIO_MIN_LISTA = 1922;
+const ANIO_MAX_LISTA = 2004;
 
-let nombreRecibido = "nombre por def";
+
+//for para generar las opciones de años en la lista
+// - opcionAnio = 2004 (ESTO NO SE REPITE)
+// - verifica la condicion de corte/iteracion (2004 >= 1922 ?)
+// 1º 2004
+// - resta opcionAnio - 1 entonces ahora es igual a 2003
+// - verificamos la condicion ? 2003 >= 1922
+// 2º 2003
+for( let opcionAnio =  ANIO_MAX_LISTA; opcionAnio >= ANIO_MIN_LISTA ; opcionAnio-- ){
+    // Reto
+    //      - que la lista de años comience 2004 y termine 1922
+    //      + la opcion tiene que ser: seleccione año ...    
+    variable = "erick";
+    document.querySelector("#lista_anios").innerHTML += `
+        <option>  ${opcionAnio} </option>
+    `;
+}
+
+
+
+/**
+ * Calcula la edad dependiendo del año recibido
+ * Muestra en la pagina  el resultado de la edad calculada y el nombre del usuario
+ */
+function calcularEdad(){
+    let nombreRecibido = document.querySelector("#nombre").value;
+    let anioRecibido = document.querySelector("#lista_anios").value;
+    let edad = "edad def";
+    //calcular la edad
+    edad = ANIO_ACTUAL - anioRecibido;
+
+    document.querySelector("#respuesta").innerHTML = `
+        <h2>  ${nombreRecibido} tenes ${edad} años </h2>
+    `;
+}
